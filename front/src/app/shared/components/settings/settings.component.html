@@ -1,0 +1,44 @@
+<ion-grid>
+  <ion-row>
+    <ion-col></ion-col>
+    <ion-col>
+      <ion-title>Settings</ion-title>
+    </ion-col>
+    <ion-col>
+      <ion-button fill="clear" shape="round" size="large" id="openPopover">
+        <ion-icon name="person-circle" slot="icon-only" [color]="connected ? 'success' : 'danger'"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+  <ion-list-header>Appearance</ion-list-header>
+  <ion-list>
+    <ion-row>
+      <ion-col>
+        <app-setting-theme></app-setting-theme>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  <ion-list-header>Currency</ion-list-header>
+  <ion-list>
+    <ion-row>
+      <ion-col>
+        <app-setting-currency (currencyChanged)="currencyChanged.emit()"></app-setting-currency>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+  <ion-list-header>Processing mode</ion-list-header>
+  <ion-list>
+    <ion-row>
+      <ion-col>
+        <app-setting-processing-mode (processingModChanged)="processingModChanged.emit()"></app-setting-processing-mode>
+      </ion-col>
+    </ion-row>
+  </ion-list>
+</ion-grid>
+
+<ion-popover trigger="openPopover">
+  <ng-template>
+    <app-login *ngIf="!connected" (loginEvent)="updateStatus()"></app-login>
+    <app-logout *ngIf="connected" (logoutEvent)="updateStatus()"></app-logout>
+  </ng-template>
+</ion-popover>

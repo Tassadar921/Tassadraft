@@ -1,0 +1,9 @@
+<div *ngIf="loadingService.cardsProcessing">
+  <p>Processing ...<ion-spinner></ion-spinner></p>
+  <p>{{loadingService.currentItem}}/{{loadingService.getTotalItems()}}</p>
+  <p>{{loadingService.currentPercentage}}%</p>
+</div>
+
+<div *ngIf="!loadingService.cardsProcessing">
+  <ion-spinner></ion-spinner>
+</div>

@@ -1,0 +1,37 @@
+#content {
+  ion-item, h1{
+    font-size: 1em;
+    text-align:center;
+  }
+}
+
+.eyes{
+  margin-top: 25px;
+  ion-icon{
+    color: #6666f6;
+    -webkit-transition: color 2s ease-out;
+  }
+}
+
+.eyes:hover{
+  ion-icon{
+    color: #c5e5fd;
+  }
+}
+
+.submitButton{
+  p{
+    margin-right:5px;
+    font-weight: bold;
+  }
+  color: var(--ion-color-primary);
+}
+
+.forgotPassword{
+  color: #007bff;
+}
+
+.forgotPassword:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}

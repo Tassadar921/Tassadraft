@@ -1,0 +1,7 @@
+{
+  "name": "Tassadraft",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

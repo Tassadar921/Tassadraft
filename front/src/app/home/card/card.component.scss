@@ -1,0 +1,18 @@
+ion-icon {
+  color: red;
+}
+
+ion-row {
+  width: 100vw;
+  display: flex;
+}
+
+ion-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  ion-toggle {
+    width: fit-content;
+    height: fit-content;
+  }
+}

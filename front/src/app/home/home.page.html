@@ -1,0 +1,102 @@
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col pull="2">
+        <ion-button fill="clear" (click)="goBack()" *ngIf="processed" size="large">
+          <ion-icon name="arrow-undo"></ion-icon>
+        </ion-button>
+      </ion-col>
+      <ion-col pull="3">
+        <ion-title>Tassadraft</ion-title>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="clear" (click)="askDeleteAllConfirmation()" *ngIf="!processed && photos.getPhotos().length" size="large">
+          <ion-icon name="trash-bin" class="inline-trash-icon"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <div *ngIf="!processed">
+      <ion-row *ngFor="let photo of photos.getPhotos()">
+        <ion-col>
+          <app-photo [photo]="photo" (deletePhotoEvent)="deletePhoto($event)"></app-photo>
+        </ion-col>
+      </ion-row>
+    </div>
+
+
+    <div *ngIf="processed">
+      <ion-row>
+        <ion-col>
+          <ion-item button="true" (click)="cards.sortBy('name')">
+            <div class="title-container">
+              <p>Card</p>
+              <ion-icon [name]="cards.sortedBy.direction === 'DESC' ? 'arrow-down':'arrow-up'" *ngIf="cards.sortedBy.category === 'name'"></ion-icon>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col size="4">
+          <ion-item button="true" (click)="cards.sortBy('displayedPrice')">
+            <div class="title-container">
+              <p style="margin: 0;">Price ({{currencySymbol}})</p>
+              <ion-icon [name]="cards.sortedBy.direction === 'DESC' ? 'arrow-down' : 'arrow-up'" *ngIf="cards.sortedBy.category === 'displayedPrice'"></ion-icon>
+            </div>
+          </ion-item>
+        </ion-col>
+        <ion-col>
+          <ion-item button="true">
+            <p>Foil</p>
+          </ion-item>
+        </ion-col>
+        <ion-col size="2">
+          <p>Delete</p>
+        </ion-col>
+      </ion-row>
+      <app-card *ngFor="let card of cards.getCards()" [card]="card" (updatedPriceEvent)="updatedCardDisplayedPrice()" (deleteCardEvent)="deleteCard($event)"></app-card>
+    </div>
+  </ion-grid>
+
+  <input type="file" hidden #file (change)="uploadImage($event)" accept="image/jpeg,image/png">
+
+  <ion-fab slot="fixed" horizontal="end" vertical="top">
+    <ion-fab-button id="settings" size="small">
+      <ion-icon name="settings"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab slot="fixed" horizontal="start" vertical="bottom" *ngIf="undoService.undoStack.length">
+    <ion-fab-button (click)="undo()" color="warning" size="small">
+      <ion-icon name="arrow-undo-circle"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab slot="fixed" horizontal="start" vertical="bottom" *ngIf="!processed">
+    <ion-fab-button (click)="file.click()">
+      <ion-icon name="document-attach"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab slot="fixed" horizontal="center" vertical="bottom" *ngIf="!processed">
+    <app-camera (newPhotoEvent)="getPhoto($event)"></app-camera>
+  </ion-fab>
+
+  <ion-fab slot="fixed" horizontal="end" vertical="bottom" *ngIf="photos.getPhotos().length && !processed">
+    <ion-fab-button (click)="process()" color="success">
+      <ion-icon name="save"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+<app-loading *ngIf="loadingService.loading"></app-loading>
+
+<ion-modal trigger="settings">
+  <ng-template>
+    <ion-content>
+      <app-settings (processingModChanged)="clearCards()" (currencyChanged)="updateCurrencySymbol()"></app-settings>
+    </ion-content>
+    <app-modal-close-button></app-modal-close-button>
+  </ng-template>
+</ion-modal>

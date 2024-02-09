@@ -1,0 +1,18 @@
+<ion-item button="true" (click)="previewCard()">
+  <ion-row>
+    <ion-col>
+      <p><strong>{{card?.name}}</strong></p>
+    </ion-col>
+    <ion-col size="4">
+      <p>{{cardPrice}}{{currencySymbol}}</p>
+    </ion-col>
+    <ion-col class="ion-toggle-col">
+      <ion-toggle *ngIf="card?.getFoiledEdited()" (ionChange)="togglePrice()" [(ngModel)]="foilCard"></ion-toggle>
+    </ion-col>
+    <ion-col size="2">
+      <ion-button (click)="deleteCard(card?.id)" fill="clear">
+        <ion-icon name="trash" slot="icon-only" class="inline-trash-icon"></ion-icon>
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-item>

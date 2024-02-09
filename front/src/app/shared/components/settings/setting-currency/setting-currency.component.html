@@ -1,0 +1,5 @@
+<ion-item>
+  <ion-radio-group [value]="selectedCurrency" [(ngModel)]="selectedCurrency" (ionChange)="newCurrencySelected()">
+    <ion-radio *ngFor="let currencyName of Object.keys(currencyService.getCurrencyList())" [value]="currencyName">{{currencyName | uppercase}}</ion-radio>
+  </ion-radio-group>
+</ion-item>

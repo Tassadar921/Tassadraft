@@ -1,0 +1,12 @@
+ion-row {
+  width: 100%;
+}
+
+ion-icon {
+  color: #6b6b1c;
+  -webkit-transition: color 1s ease-out;
+  font-size: 2em;
+  &:hover {
+    color: #ffff00;
+  }
+}

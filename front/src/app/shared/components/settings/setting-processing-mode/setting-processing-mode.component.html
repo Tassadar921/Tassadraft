@@ -1,0 +1,5 @@
+<ion-item>
+  <ion-radio-group [value]="selectedProcessingMode" [(ngModel)]="selectedProcessingMode" (ionChange)="newModeSelected()">
+    <ion-radio *ngFor="let processingMode of Object.keys(ProcessingModeEnum)" [value]="processingMode">{{processingMode | capitalize}}</ion-radio>
+  </ion-radio-group>
+</ion-item>
