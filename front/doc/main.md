@@ -1,6 +1,4 @@
 # Tassadraft front-end
-### Framework: Angular 16.0.0, Ionic 7.0.0
+### Frameworks: Angular 17.1.2, Ionic 7.7.0
 
 [Main documentation](/README.md)
-
-[Front-end documentation](/back/doc/main.md)
