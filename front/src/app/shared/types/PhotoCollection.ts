@@ -43,6 +43,10 @@ export default class PhotoCollection {
     });
   }
 
+  public getProcessedPhotos(): Photo[] {
+    return this.photos.filter((photo: Photo): boolean => photo.getProcessed());
+  }
+
   public map(callback: (photo: Photo) => void): void {
     this.photos.map(callback);
   }

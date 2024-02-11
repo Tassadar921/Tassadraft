@@ -113,7 +113,10 @@ export class RequestService {
 
   public async checkSessionTokenValidity(): Promise<boolean> {
     try {
-      const data = await lastValueFrom(this.http.get<{sessionTokenIsValid: boolean}>(`${environment.appApiBaseUrl}/api/reserved`, { headers: this.authHeaders }));
+      const data: {sessionTokenIsValid: boolean} =
+        await lastValueFrom(this.http.get< {sessionTokenIsValid: boolean} >(
+          `${environment.appApiBaseUrl}/api/reserved`, { headers: this.authHeaders }
+        ));
       this.loadingService.stopLoading();
       return data.sessionTokenIsValid ?? false;
     } catch (e: any) {
@@ -127,7 +130,8 @@ export class RequestService {
   public async login(email: string, password: string): Promise<void> {
     this.loadingService.startLoading();
     try {
-      const data = await lastValueFrom(this.http.post< { message: string | undefined, token: { token: string } | undefined } >(
+      const data: { message: string | undefined, token: { token: string } | undefined } =
+        await lastValueFrom(this.http.post< { message: string | undefined, token: { token: string } | undefined } >(
         `${environment.appApiBaseUrl}/api/login`, { email, password }));
       if (data.token) {
         await this.localStorageService.setItem('sessionToken', data.token.token)
@@ -198,9 +202,5 @@ export class RequestService {
       console.log(e);
     }
     this.loadingService.stopLoading();
-  }
-
-  public async test(): Promise<void> {
-    console.log(await lastValueFrom(this.http.get<any>(`${environment.appApiBaseUrl}/api/test`)));
   }
 }

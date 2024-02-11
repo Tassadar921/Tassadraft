@@ -1,6 +1,8 @@
-# Tassadraft v1.0
+# Tassadraft front-end v1.0
 
 ## Description
-description
 
-[Front-end documentation](/front/doc/main.md)
+### Links
+
+- [Documentation](/front/doc/Front.md)
+- [Changelog](/front/doc/CHANGELOG.md)

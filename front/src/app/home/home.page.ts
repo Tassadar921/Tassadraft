@@ -79,7 +79,7 @@ export class HomePage implements OnInit {
       this.processed = true;
     } else if (await this.localStorageService.getItem('processingMode') === ProcessingModeEnum.remote) {
       const backCards: BackCard[] = await this.requestService.remoteProcess(
-        await this.getBase64Strings(), this.cards.getCards().length, this.photos.getPhotos().length
+        await this.getBase64Strings(), this.cards.getCards().length, this.photos.getProcessedPhotos().length
       );
       backCards.map((backCard: BackCard): void => {
         const card: Card = this.cards.add(backCard);
@@ -111,7 +111,6 @@ export class HomePage implements OnInit {
           reader.readAsDataURL(blob);
         });
       } else {
-        // Return undefined immediately for already processed photos
         return undefined;
       }
     });
