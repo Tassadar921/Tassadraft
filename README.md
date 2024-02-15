@@ -1,8 +1,11 @@
-# Tassadraft front-end v1.0
+# Tassadraft v1.1
+### Frameworks: Angular 17.1.2, Ionic 7.7.0
 
 ## Description
 
 ### Links
 
-- [Documentation](/front/doc/Front.md)
-- [Changelog](/front/doc/CHANGELOG.md)
+- [Changelog](/doc/CHANGELOG.md)
+- [Download](https://api.tassadraft.com)
+
+

@@ -3,7 +3,11 @@
 ### Infrastructure
 
 - Added Github Ci
+- Deleted some useless files
+- Simplified infra
 
 ### Processing
 
 - Patched a bug when sending multiple images to remote processing
+
+[Documentation](/doc/tassadraft)
