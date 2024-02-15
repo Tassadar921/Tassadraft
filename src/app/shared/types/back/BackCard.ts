@@ -5,7 +5,7 @@ import BackRelatedUri from "./BackRelatedUri";
 import BackPurchaseUri from "./BackPurchaseUri";
 import BackSet from './BackSet';
 
-export type BackCard = {
+type BackCard = {
   id: number;
   name: string;
   printedName: string | null;
@@ -31,3 +31,5 @@ export type BackCard = {
   sets: BackSet[];
   images: number[];
 };
+
+export default BackCard;

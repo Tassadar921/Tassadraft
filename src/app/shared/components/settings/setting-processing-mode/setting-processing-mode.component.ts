@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { LocalStorageService } from "../../../services/localStorage/local-storage.service";
-import { ProcessingModeEnum } from "../../../types/ProcessingModeEnum";
+import ProcessingModeEnum from "../../../types/ProcessingModeEnum";
 import { GetCardsNameService } from "../../../services/get-cards-name/get-cards-name.service";
 
 @Component({

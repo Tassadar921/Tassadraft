@@ -1,4 +1,4 @@
-import { ApiRelatedUri } from '../api/ApiRelatedUri';
+import ApiRelatedUri from '../api/ApiRelatedUri';
 
 export default class BackRelatedUri {
   constructor(relatedUri: ApiRelatedUri | void, scryfallUri: string = '') {

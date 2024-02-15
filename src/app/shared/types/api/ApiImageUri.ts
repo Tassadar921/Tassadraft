@@ -1,4 +1,4 @@
-export type ApiImageUri = {
+type ApiImageUri = {
   small: string;
   normal: string;
   large: string;
@@ -6,3 +6,5 @@ export type ApiImageUri = {
   art_crop: string;
   border_crop: string;
 }
+
+export default ApiImageUri;

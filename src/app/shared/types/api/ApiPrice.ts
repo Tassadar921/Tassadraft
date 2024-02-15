@@ -1,4 +1,4 @@
-export type ApiPrice = {
+type ApiPrice = {
   usd: string;
   usd_foil: string;
   usd_etched: string;
@@ -7,3 +7,5 @@ export type ApiPrice = {
   eur_etched: string;
   tix: string;
 }
+
+export default ApiPrice;

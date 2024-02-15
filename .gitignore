@@ -1,28 +1,28 @@
 # Specifies intentionally untracked files to ignore when using Git
 # http://git-scm.com/docs/gitignore
 
-front/*~
-front/*.sw[mnpcod]
-front/.tmp
-front/*.tmp
-front/*.tmp.*
-front/UserInterfaceState.xcuserstate
-front/$RECYCLE.BIN/
+*~
+*.sw[mnpcod]
+.tmp
+*.tmp
+*.tmp.*
+UserInterfaceState.xcuserstate
+$RECYCLE.BIN/
 
 *.log
-front/log.txt
+log.txt
 
 
-front/.sourcemaps
-front/.versions
-front/coverage
+.sourcemaps
+.versions
+coverage
 
 # Ionic
-front/.ionic
-front/www
-front/platforms
-front/plugins
-front/android
+.ionic
+www
+platforms
+plugins
+android
 
 # Node
 front/node_modules
@@ -49,14 +49,15 @@ front/yarn-error.log
 
 
 # Miscellaneous
-front/.angular
-front/.angular/cache
-front/.sass-cache/
-front/connect.lock
-front/coverage
-front/libpeerconnection.log
-front/testem.log
-front/typings
+.angular
+.angular/cache
+.sass-cache/
+connect.lock
+coverage
+libpeerconnection.log
+testem.log
+typings
+node_modules
 
 # System files
 .DS_Store

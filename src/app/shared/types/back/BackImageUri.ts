@@ -1,4 +1,4 @@
-import { ApiImageUri } from '../api/ApiImageUri';
+import ApiImageUri from '../api/ApiImageUri';
 
 export default class BackImageUri {
 

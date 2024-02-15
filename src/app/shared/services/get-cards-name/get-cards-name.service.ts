@@ -9,7 +9,7 @@ import CardCollection from '../../types/CardCollection';
 import Photo from '../../types/Photo';
 import PhotoCollection from '../../types/PhotoCollection';
 import { RequestService } from '../request/request.service';
-import { ApiCard } from "../../types/api/ApiCard";
+import ApiCard from "../../types/api/ApiCard";
 import BackSet from '../../types/back/BackSet';
 
 @Injectable({

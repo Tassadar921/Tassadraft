@@ -1,4 +1,4 @@
-import { ApiPrice } from "../api/ApiPrice";
+import ApiPrice from "../api/ApiPrice";
 
 export default class BackPrice {
   constructor(apiPrice: ApiPrice | void) {

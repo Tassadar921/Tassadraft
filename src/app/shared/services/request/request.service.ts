@@ -4,11 +4,10 @@ import { lastValueFrom } from 'rxjs';
 import { environment } from '../../../../environments/environment.prod';
 import { LoadingService } from '../loading/loading.service';
 import { ToastService } from '../toast/toast.service';
-import { ApiCard } from '../../types/api/ApiCard';
-import Card from '../../types/Card';
-import { ApiSet } from '../../types/api/ApiSet';
+import ApiCard from '../../types/api/ApiCard';
+import ApiSet from '../../types/api/ApiSet';
 import { LocalStorageService } from '../localStorage/local-storage.service';
-import {BackCard} from '../../types/back/BackCard';
+import BackCard from '../../types/back/BackCard';
 
 @Injectable({
   providedIn: 'root'

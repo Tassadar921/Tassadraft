@@ -1,4 +1,4 @@
-import { ApiPurchaseUri } from "../api/ApiPurchaseUri";
+import ApiPurchaseUri from "../api/ApiPurchaseUri";
 
 export default class BackPurchaseUri {
 

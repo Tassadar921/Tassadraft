@@ -1,4 +1,4 @@
-import { ApiSet } from '../api/ApiSet';
+import ApiSet from '../api/ApiSet';
 
 export default class BackSet {
   public constructor(legality: ApiSet | void) {

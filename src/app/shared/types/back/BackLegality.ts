@@ -1,4 +1,4 @@
-import { ApiLegality } from "../api/ApiLegality";
+import ApiLegality from "../api/ApiLegality";
 export default class BackLegality {
   public constructor(legality: ApiLegality | void) {
     this.standard = legality?.standard ?? '';

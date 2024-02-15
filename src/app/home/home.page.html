@@ -95,7 +95,12 @@
 <ion-modal trigger="settings">
   <ng-template>
     <ion-content>
-      <app-settings (processingModChanged)="clearCards()" (currencyChanged)="updateCurrencySymbol()"></app-settings>
+      <app-settings
+        (processingModChanged)="clearCards()"
+        (currencyChanged)="updateCurrencySymbol()"
+        (openReportClicked)="console.log('aaaaaa')"
+      >
+      </app-settings>
     </ion-content>
     <app-modal-close-button></app-modal-close-button>
   </ng-template>

@@ -1,4 +1,4 @@
-export type ApiSet = {
+type ApiSet = {
   id: string;
   object: string;
   code: string;
@@ -15,3 +15,5 @@ export type ApiSet = {
   foil_only: boolean;
   icon_svg_uri: string;
 }
+
+export default ApiSet;

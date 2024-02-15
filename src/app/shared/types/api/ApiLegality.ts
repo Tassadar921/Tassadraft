@@ -1,6 +1,6 @@
-import { LegalityEnum } from '../LegalityEnum';
+import LegalityEnum from '../LegalityEnum';
 
-export type ApiLegality = {
+type ApiLegality = {
   standard: LegalityEnum;
   future: LegalityEnum;
   historic: LegalityEnum;
@@ -24,3 +24,5 @@ export type ApiLegality = {
   premodern: LegalityEnum;
   predh: LegalityEnum;
 }
+
+export default ApiLegality;

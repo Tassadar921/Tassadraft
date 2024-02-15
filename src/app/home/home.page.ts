@@ -1,16 +1,16 @@
-import {Component, OnInit} from '@angular/core';
-import {GetCardsNameService} from '../shared/services/get-cards-name/get-cards-name.service';
-import {ActionSheetController} from '@ionic/angular';
-import {UndoService} from '../shared/services/undo/undo.service';
-import {LoadingService} from '../shared/services/loading/loading.service';
+import { Component, OnInit } from '@angular/core';
+import { GetCardsNameService } from '../shared/services/get-cards-name/get-cards-name.service';
+import { ActionSheetController } from '@ionic/angular';
+import { UndoService } from '../shared/services/undo/undo.service';
+import { LoadingService } from '../shared/services/loading/loading.service';
 import Card from '../shared/types/Card';
 import CardCollection from '../shared/types/CardCollection';
 import PhotoCollection from '../shared/types/PhotoCollection';
-import {LocalStorageService} from '../shared/services/localStorage/local-storage.service';
-import {RequestService} from '../shared/services/request/request.service';
-import {ProcessingModeEnum} from '../shared/types/ProcessingModeEnum';
+import { LocalStorageService } from '../shared/services/localStorage/local-storage.service';
+import { RequestService } from '../shared/services/request/request.service';
+import ProcessingModeEnum from '../shared/types/ProcessingModeEnum';
 import Photo from '../shared/types/Photo';
-import {BackCard} from "../shared/types/back/BackCard";
+import BackCard from "../shared/types/back/BackCard";
 
 @Component({
   selector: 'app-home',
@@ -170,4 +170,10 @@ export class HomePage implements OnInit {
     });
     this.processed = false;
   }
+
+  public async openReport(): Promise<void> {
+    console.log('ici');
+  }
+
+  protected readonly console = console;
 }

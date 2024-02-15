@@ -1,10 +1,10 @@
-import { ApiImageUri } from './ApiImageUri';
-import { ApiRelatedUri } from './ApiRelatedUri';
-import { ApiPurchaseUri } from './ApiPurchaseUri';
-import { ApiPrice } from './ApiPrice';
-import { ApiLegality } from './ApiLegality';
+import ApiImageUri from './ApiImageUri';
+import ApiRelatedUri from './ApiRelatedUri';
+import ApiPurchaseUri from './ApiPurchaseUri';
+import ApiPrice from './ApiPrice';
+import ApiLegality from './ApiLegality';
 
-export type ApiCard = {
+type ApiCard = {
   //core properties
   id: string;
   arena_id: number;
@@ -129,3 +129,5 @@ export type ApiCard = {
     source: string;
   };
 };
+
+export default ApiCard;

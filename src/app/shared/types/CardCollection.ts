@@ -1,7 +1,6 @@
 import Card from './Card';
 import { UndoService } from '../services/undo/undo.service';
-import { BackCard } from './back/BackCard';
-import CardProp from "./CardProp";
+import BackCard from './back/BackCard';
 
 export default class CardCollection {
 

@@ -4,8 +4,8 @@ import BackRelatedUri from './back/BackRelatedUri';
 import BackPrice from './back/BackPrice';
 import BackPurchaseUri from './back/BackPurchaseUri';
 import BackSet from './back/BackSet';
-import { ApiCard } from './api/ApiCard';
-import { BackCard } from "./back/BackCard";
+import ApiCard from './api/ApiCard';
+import BackCard from "./back/BackCard";
 
 function isApiCard(card: any): card is ApiCard {
   return (card as ApiCard).collector_number !== undefined;
