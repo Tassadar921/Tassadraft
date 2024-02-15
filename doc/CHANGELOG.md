@@ -1,4 +1,4 @@
-# Tassadraft front-end v1.1
+# Tassadraft v1.1
 
 ### Infrastructure
 
@@ -10,4 +10,4 @@
 
 - Patched a bug when sending multiple images to remote processing
 
-[Documentation](/doc/tassadraft)
+[Documentation](/README.md)
