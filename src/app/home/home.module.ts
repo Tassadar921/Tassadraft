@@ -8,9 +8,10 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { CameraComponent } from './camera/camera.component';
 import { PhotoComponent } from './photo/photo.component';
 import { LoadingComponent } from './loading/loading.component';
-import { ModalCloseButtonComponent } from '../shared/components/modal-close-button/modal-close-button.component';
+import { ModalCloseButtonComponentModule } from "../shared/components/modal-close-button/modal-close-button-component.module";
 import { CardComponent } from './card/card.component';
 import { PreviewComponent } from './card/preview/preview.component';
+import { ReportComponent } from "./report/report.component";
 
 import { SettingsModule } from '../shared/components/settings/settings.module';
 
@@ -21,8 +22,17 @@ import { SettingsModule } from '../shared/components/settings/settings.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    SettingsModule
+    SettingsModule,
+    ModalCloseButtonComponentModule,
   ],
-    declarations: [HomePage, CameraComponent, PhotoComponent, LoadingComponent, ModalCloseButtonComponent, CardComponent, PreviewComponent]
+    declarations: [
+      HomePage,
+      CameraComponent,
+      PhotoComponent,
+      LoadingComponent,
+      CardComponent,
+      PreviewComponent,
+      ReportComponent,
+    ],
 })
 export class HomePageModule {}

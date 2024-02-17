@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GetCardsNameService } from '../shared/services/get-cards-name/get-cards-name.service';
-import { ActionSheetController } from '@ionic/angular';
+import { ActionSheetController, ModalController } from '@ionic/angular';
 import { UndoService } from '../shared/services/undo/undo.service';
 import { LoadingService } from '../shared/services/loading/loading.service';
 import Card from '../shared/types/Card';
@@ -11,6 +11,7 @@ import { RequestService } from '../shared/services/request/request.service';
 import ProcessingModeEnum from '../shared/types/ProcessingModeEnum';
 import Photo from '../shared/types/Photo';
 import BackCard from "../shared/types/back/BackCard";
+import { ReportComponent } from "./report/report.component";
 
 @Component({
   selector: 'app-home',
@@ -31,6 +32,7 @@ export class HomePage implements OnInit {
     public loadingService: LoadingService,
     public localStorageService: LocalStorageService,
     public requestService: RequestService,
+    private modalController: ModalController,
   ) {
   }
 
@@ -172,8 +174,15 @@ export class HomePage implements OnInit {
   }
 
   public async openReport(): Promise<void> {
-    console.log('ici');
-  }
+    // First, dismiss any currently open modal
+    await this.modalController.dismiss();
 
-  protected readonly console = console;
+    // Create the modal with the ReportComponent
+    const modal: HTMLIonModalElement = await this.modalController.create({
+      component: ReportComponent,
+    });
+
+    // Present the newly created modal
+    return await modal.present();
+  }
 }
