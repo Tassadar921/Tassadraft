@@ -211,6 +211,26 @@ export class RequestService {
     return [];
   }
 
+  public async sendReport(projectName: string, title: string, description: string, labels: string[]): Promise<boolean> {
+    this.loadingService.startLoading();
+    let status: boolean = false;
+    try {
+      await lastValueFrom(this.http.post< { message: string | undefined } >(
+        `${environment.appApiBaseUrl}/api/reserved/report/send/${projectName}`,
+        { title, description, labels },
+        { headers: this.authHeaders }
+      ));
+      await this.toastService.displayToast(`Report sent`, 'bottom');
+      status = true;
+    } catch (e: any) {
+      // TODO : log error
+      await this.toastService.displayToast(e.statusText, 'bottom', 'danger');
+      console.log(e);
+    }
+    this.loadingService.stopLoading();
+    return status;
+  }
+
   // function for admin
   public async addUser (): Promise<any> {
     this.loadingService.startLoading();

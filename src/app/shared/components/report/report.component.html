@@ -8,9 +8,49 @@
   </ion-row>
   <ion-row>
     <ion-col>
-        <div class="label-wrapper">
-          <app-github-label class="list" *ngFor="let label of labels" [label]="label"></app-github-label>
-        </div>
+      <ion-item>
+        <ion-input
+          required="true"
+          [(ngModel)]="title"
+          type="text"
+          label="Title"
+          label-placement="floating">
+        </ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <div class="label-wrapper">
+        <app-github-label *ngFor="let label of githubLabels"
+                          [class]="'list'"
+                          [ngStyle]="{'box-shadow': selectedLabels.includes(label.name) ? '0 0 0 0.1rem #' + label.color : ''}"
+                          [label]="label"
+                          (labelClick)="labelClicked(label)">
+        </app-github-label>
+      </div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-textarea
+          required="true"
+          [(ngModel)]="description"
+          label="Description"
+          label-placement="floating">
+        </ion-textarea>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col>
+      <ion-button class="submitButton" shape="round" size="small" (click)="sendReport()"
+                  [color]="title && description?'success':'danger'"
+                  [disabled]="!(title && description)">
+        <p>Send</p>
+        <ion-icon name="send"></ion-icon>
+      </ion-button>
     </ion-col>
   </ion-row>
 </ion-content>

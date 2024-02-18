@@ -7,7 +7,6 @@ import { LocalStorageService } from '../../services/localStorage/local-storage.s
   styleUrls: ['./settings.component.scss'],
 })
 export class SettingsComponent {
-
   @Output() public processingModChanged: EventEmitter<void> = new EventEmitter<void>();
   @Output() public currencyChanged: EventEmitter<void> = new EventEmitter<void>();
   @Output() public openReport: EventEmitter<void> = new EventEmitter<void>();

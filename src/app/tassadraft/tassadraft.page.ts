@@ -177,6 +177,9 @@ export class TassadraftPage implements OnInit {
 
     const modal: HTMLIonModalElement = await this.modalController.create({
       component: ReportComponent,
+      componentProps: {
+        projectName: 'Tassadraft',
+      },
     });
 
     await modal.present();

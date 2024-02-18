@@ -54,7 +54,6 @@ front/yarn-error.log
 .sass-cache
 .nx
 connect.lock
-coverage
 libpeerconnection.log
 testem.log
 typings
