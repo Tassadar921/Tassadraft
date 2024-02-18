@@ -6,8 +6,8 @@ import { FormsModule } from '@angular/forms';
 import { SettingsComponent } from './settings.component';
 import { SettingThemeComponent } from './setting-theme/setting-theme.component';
 import { SettingCurrencyComponent } from "./setting-currency/setting-currency.component";
-import { LogoutComponent } from './logout/logout.component';
-import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from '../logout/logout.component';
+import { LoginComponent } from '../login/login.component';
 import { SettingProcessingModeComponent } from "./setting-processing-mode/setting-processing-mode.component";
 import { CapitalizePipe } from "../../pipes/capitalize.pipe";
 
@@ -18,8 +18,6 @@ import { CapitalizePipe } from "../../pipes/capitalize.pipe";
     SettingsComponent,
     SettingThemeComponent,
     SettingCurrencyComponent,
-    LogoutComponent,
-    LoginComponent,
     SettingProcessingModeComponent,
     CapitalizePipe,
   ],
@@ -27,6 +25,8 @@ import { CapitalizePipe } from "../../pipes/capitalize.pipe";
     CommonModule,
     IonicModule,
     FormsModule,
+    LoginComponent,
+    LogoutComponent,
   ],
   exports: [
     SettingsComponent,

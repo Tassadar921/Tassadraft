@@ -51,9 +51,9 @@ front/yarn-error.log
 # Miscellaneous
 .angular
 .angular/cache
-.sass-cache/
+.sass-cache
+.nx
 connect.lock
-coverage
 libpeerconnection.log
 testem.log
 typings

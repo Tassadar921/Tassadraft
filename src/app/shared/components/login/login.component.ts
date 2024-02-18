@@ -1,11 +1,17 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { RequestService } from '../../../services/request/request.service';
-import { PopoverController } from '@ionic/angular';
+import { RequestService } from '../../services/request/request.service';
+import { IonicModule, PopoverController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  standalone: true,
+  imports: [
+    IonicModule,
+    FormsModule
+  ]
 })
 export class LoginComponent  implements OnInit {
 

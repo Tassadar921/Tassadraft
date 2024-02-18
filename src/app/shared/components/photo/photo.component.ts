@@ -1,13 +1,19 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ModalController } from '@ionic/angular';
-import Photo from '../../shared/types/Photo';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { IonicModule, ModalController } from '@ionic/angular';
+import Photo from '../../types/Photo';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-photo',
   templateUrl: './photo.component.html',
   styleUrls: ['./photo.component.scss'],
+  standalone: true,
+  imports: [
+    IonicModule,
+    NgIf
+  ]
 })
-export class PhotoComponent implements OnInit {
+export class PhotoComponent {
 
   @Input() public photo: Photo | undefined;
   @Output() public deletePhotoEvent: EventEmitter<number> = new EventEmitter<number>();
@@ -15,8 +21,6 @@ export class PhotoComponent implements OnInit {
   constructor(
     private modalController: ModalController
   ) {}
-
-  ngOnInit(): void { }
 
   public async deletePhoto(fromModal: boolean = false): Promise<void> {
     if (fromModal) {
