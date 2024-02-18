@@ -1,0 +1,5 @@
+<a *ngIf="label" (click)="labelClick.emit()" [ngStyle]="{
+  'background-color': backgroundColor, 'color': textColor, 'border-color': borderColor
+}" class="github-label">
+  {{label.name}}
+</a>

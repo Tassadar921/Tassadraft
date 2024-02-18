@@ -11,8 +11,8 @@ import { GetCardsNameService } from "../../../services/get-cards-name/get-cards-
 export class SettingProcessingModeComponent {
 
   @Output() public processingModChanged: EventEmitter<void> = new EventEmitter<void>();
-  protected readonly ProcessingModeEnum: typeof ProcessingModeEnum = ProcessingModeEnum;
-  protected readonly Object: ObjectConstructor = Object;
+  public readonly ProcessingModeEnum: typeof ProcessingModeEnum = ProcessingModeEnum;
+  public readonly Object: ObjectConstructor = Object;
   public selectedProcessingMode: ProcessingModeEnum = ProcessingModeEnum.local;
 
   constructor(

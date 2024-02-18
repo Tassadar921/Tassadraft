@@ -1,18 +1,21 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Camera, CameraResultType, CameraSource, Photo } from '@capacitor/camera';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-camera',
   templateUrl: './camera.component.html',
   styleUrls: ['./camera.component.scss'],
+  standalone: true,
+  imports: [
+    IonicModule
+  ]
 })
-export class CameraComponent  implements OnInit {
+export class CameraComponent {
 
-  @Output() newPhotoEvent: EventEmitter<string> = new EventEmitter<string>();
+  @Output() public newPhotoEvent: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }
-
-  ngOnInit(): void {}
 
   async takePicture(): Promise<void> {
     const photo: Photo = await Camera.getPhoto({

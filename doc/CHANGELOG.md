@@ -6,6 +6,10 @@
 - Deleted some useless files
 - Simplified infra
 
+### New features
+
+- Added a report component that automatically creates an issue on Github
+
 ### Processing
 
 - Patched a bug when sending multiple images to remote processing

@@ -9,7 +9,7 @@ import { LocalStorageService } from "../../../services/localStorage/local-storag
 })
 export class SettingCurrencyComponent {
 
-  protected readonly Object: ObjectConstructor = Object;
+  public readonly Object: ObjectConstructor = Object;
   public selectedCurrency: string = 'USD';
   @Output() public currencyChanged: EventEmitter<void> = new EventEmitter<void>();
 

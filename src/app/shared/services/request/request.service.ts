@@ -8,6 +8,8 @@ import ApiCard from '../../types/api/ApiCard';
 import ApiSet from '../../types/api/ApiSet';
 import { LocalStorageService } from '../localStorage/local-storage.service';
 import BackCard from '../../types/back/BackCard';
+import GithubLabel from '../../types/github/GithubLabel';
+import Label from '../../types/Label';
 
 @Injectable({
   providedIn: 'root'
@@ -188,6 +190,25 @@ export class RequestService {
     }
 
     return cardsArray;
+  }
+
+  public async prepareReport(projectName: string): Promise<Label[]> {
+    this.loadingService.startLoading();
+    let data: GithubLabel[];
+    try {
+      data = await lastValueFrom(this.http.get< GithubLabel[] >(
+        `${environment.appApiBaseUrl}/api/reserved/report/prepare/${projectName}`,
+        { headers: this.authHeaders }
+      ));
+      this.loadingService.stopLoading();
+      return data.map((label: GithubLabel) => new Label(label));
+    } catch (e: any) {
+      // TODO : log error
+      await this.toastService.displayToast(e.statusText, 'bottom', 'danger');
+      console.log(e);
+    }
+    this.loadingService.stopLoading();
+    return [];
   }
 
   // function for admin

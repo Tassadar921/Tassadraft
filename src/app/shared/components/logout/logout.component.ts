@@ -1,11 +1,15 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { RequestService } from '../../../services/request/request.service';
-import { PopoverController } from '@ionic/angular';
+import { RequestService } from '../../services/request/request.service';
+import { IonicModule, PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-logout',
   templateUrl: './logout.component.html',
   styleUrls: ['./logout.component.scss'],
+  standalone: true,
+  imports: [
+    IonicModule
+  ]
 })
 export class LogoutComponent {
 

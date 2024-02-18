@@ -1,20 +1,28 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import Card from '../../shared/types/Card';
-import { CurrencyService } from "../../shared/services/currency/currency.service";
-import { LocalStorageService } from "../../shared/services/localStorage/local-storage.service";
-import { ModalController } from '@ionic/angular';
-import { PreviewComponent } from "./preview/preview.component";
+import Card from '../../types/Card';
+import { CurrencyService } from "../../services/currency/currency.service";
+import { LocalStorageService } from "../../services/localStorage/local-storage.service";
+import { IonicModule, ModalController } from '@ionic/angular';
+import { PreviewComponent } from "../preview/preview.component";
+import { NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
+  standalone: true,
+  imports: [
+    IonicModule,
+    NgIf,
+    FormsModule
+  ]
 })
 export class CardComponent  implements OnInit {
 
-  @Input() card: Card | undefined;
-  @Output() deleteCardEvent: EventEmitter<number> = new EventEmitter<number>();
-  @Output() updatedPriceEvent: EventEmitter<void> = new EventEmitter<void>();
+  @Input() public card: Card | undefined;
+  @Output() public deleteCardEvent: EventEmitter<number> = new EventEmitter<number>();
+  @Output() public updatedPriceEvent: EventEmitter<void> = new EventEmitter<void>();
   public foilCard: boolean = false;
   public currencySymbol: '€' | '$' | '£' = '$';
   public cardPrice: number = 0;

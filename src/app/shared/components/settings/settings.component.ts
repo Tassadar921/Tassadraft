@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { LocalStorageService } from '../../services/localStorage/local-storage.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { LocalStorageService } from '../../services/localStorage/local-storage.s
   templateUrl: './settings.component.html',
   styleUrls: ['./settings.component.scss'],
 })
-export class SettingsComponent  implements OnInit {
+export class SettingsComponent {
 
   @Output() public processingModChanged: EventEmitter<void> = new EventEmitter<void>();
   @Output() public currencyChanged: EventEmitter<void> = new EventEmitter<void>();
@@ -16,8 +16,6 @@ export class SettingsComponent  implements OnInit {
   constructor(private localStorageService: LocalStorageService) {
     this.updateStatus().then( (): void => {} );
   }
-
-  ngOnInit(): void { }
 
   public async updateStatus(): Promise<void> {
     this.connected = !!await this.localStorageService.getItem('sessionToken');

@@ -11,7 +11,7 @@ import { RequestService } from '../shared/services/request/request.service';
 import ProcessingModeEnum from '../shared/types/ProcessingModeEnum';
 import Photo from '../shared/types/Photo';
 import BackCard from "../shared/types/back/BackCard";
-import { ReportComponent } from "./report/report.component";
+import { ReportComponent } from "../shared/components/report/report.component";
 
 @Component({
   selector: 'app-home',
@@ -33,8 +33,7 @@ export class HomePage implements OnInit {
     public localStorageService: LocalStorageService,
     public requestService: RequestService,
     private modalController: ModalController,
-  ) {
-  }
+  ) { }
 
   async ngOnInit(): Promise<void> {
     await this.updateCurrencySymbol();
@@ -174,15 +173,12 @@ export class HomePage implements OnInit {
   }
 
   public async openReport(): Promise<void> {
-    // First, dismiss any currently open modal
     await this.modalController.dismiss();
 
-    // Create the modal with the ReportComponent
     const modal: HTMLIonModalElement = await this.modalController.create({
       component: ReportComponent,
     });
 
-    // Present the newly created modal
-    return await modal.present();
+    await modal.present();
   }
 }
