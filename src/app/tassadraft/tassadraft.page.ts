@@ -14,11 +14,11 @@ import BackCard from "../shared/types/back/BackCard";
 import { ReportComponent } from "../shared/components/report/report.component";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: 'home.page.html',
-  styleUrls: ['home.page.scss'],
+  selector: 'app-tassadraft',
+  templateUrl: 'tassadraft.page.html',
+  styleUrls: ['tassadraft.page.scss'],
 })
-export class HomePage implements OnInit {
+export class TassadraftPage implements OnInit {
 
   public photos: PhotoCollection = new PhotoCollection();
   public cards: CardCollection = new CardCollection(this.undoService);

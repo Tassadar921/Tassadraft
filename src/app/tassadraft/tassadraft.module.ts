@@ -2,9 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import { TassadraftPage } from './tassadraft.page';
 
-import { HomePageRoutingModule } from './home-routing.module';
+import { TassadraftPageRoutingModule } from './tassadraft-routing.module';
 import { ModalCloseButtonComponent } from '../shared/components/modal-close-button/modal-close-button.component';
 
 import { SettingsModule } from '../shared/components/settings/settings.module';
@@ -20,7 +20,7 @@ import { CardComponent } from '../shared/components/card/card.component';
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule,
+    TassadraftPageRoutingModule,
     SettingsModule,
     ModalCloseButtonComponent,
     PhotoComponent,
@@ -30,7 +30,7 @@ import { CardComponent } from '../shared/components/card/card.component';
     CardComponent,
   ],
     declarations: [
-      HomePage,
+      TassadraftPage,
     ],
 })
-export class HomePageModule {}
+export class TassadraftPageModule {}

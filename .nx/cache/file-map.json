@@ -145,60 +145,12 @@
         "hash": "4178708655248501324"
       },
       {
-        "file": "src/app/home/camera/camera.component.html",
-        "hash": "14465223748386047962"
-      },
-      {
-        "file": "src/app/home/camera/camera.component.scss",
-        "hash": "3244421341483603138"
-      },
-      {
-        "file": "src/app/home/camera/camera.component.spec.ts",
-        "hash": "17863841790325962657"
-      },
-      {
-        "file": "src/app/home/camera/camera.component.ts",
-        "hash": "13790435225800964842"
-      },
-      {
-        "file": "src/app/home/card/card.component.html",
-        "hash": "3455221233035026747"
-      },
-      {
-        "file": "src/app/home/card/card.component.scss",
-        "hash": "1258514077599105417"
-      },
-      {
-        "file": "src/app/home/card/card.component.spec.ts",
-        "hash": "11293006162659921317"
-      },
-      {
-        "file": "src/app/home/card/card.component.ts",
-        "hash": "2985110721152583611"
-      },
-      {
-        "file": "src/app/home/card/preview/preview.component.html",
-        "hash": "3512678652793692814"
-      },
-      {
-        "file": "src/app/home/card/preview/preview.component.scss",
-        "hash": "11431479827714996289"
-      },
-      {
-        "file": "src/app/home/card/preview/preview.component.spec.ts",
-        "hash": "18128510047502149234"
-      },
-      {
-        "file": "src/app/home/card/preview/preview.component.ts",
-        "hash": "543032147787403534"
-      },
-      {
         "file": "src/app/home/home-routing.module.ts",
         "hash": "7920919376139784282"
       },
       {
         "file": "src/app/home/home.module.ts",
-        "hash": "8129432186437335763"
+        "hash": "1344931277175551535"
       },
       {
         "file": "src/app/home/home.page.html",
@@ -214,39 +166,39 @@
       },
       {
         "file": "src/app/home/home.page.ts",
-        "hash": "8686503056803169139"
+        "hash": "11720502482078198399"
       },
       {
-        "file": "src/app/home/loading/loading.component.html",
-        "hash": "12409903976374669256"
+        "file": "src/app/shared/components/camera/camera.component.html",
+        "hash": "14465223748386047962"
       },
       {
-        "file": "src/app/home/loading/loading.component.scss",
-        "hash": "15882796663219523377"
+        "file": "src/app/shared/components/camera/camera.component.scss",
+        "hash": "3244421341483603138"
       },
       {
-        "file": "src/app/home/loading/loading.component.spec.ts",
-        "hash": "11905912649069930390"
+        "file": "src/app/shared/components/camera/camera.component.spec.ts",
+        "hash": "17863841790325962657"
       },
       {
-        "file": "src/app/home/loading/loading.component.ts",
-        "hash": "15278519459511190549"
+        "file": "src/app/shared/components/camera/camera.component.ts",
+        "hash": "2694802852925539229"
       },
       {
-        "file": "src/app/home/photo/photo.component.html",
-        "hash": "6510269022962401317"
+        "file": "src/app/shared/components/card/card.component.html",
+        "hash": "3455221233035026747"
       },
       {
-        "file": "src/app/home/photo/photo.component.scss",
-        "hash": "7731388080693687227"
+        "file": "src/app/shared/components/card/card.component.scss",
+        "hash": "1258514077599105417"
       },
       {
-        "file": "src/app/home/photo/photo.component.spec.ts",
-        "hash": "233563660258502312"
+        "file": "src/app/shared/components/card/card.component.spec.ts",
+        "hash": "11293006162659921317"
       },
       {
-        "file": "src/app/home/photo/photo.component.ts",
-        "hash": "3152644590138687719"
+        "file": "src/app/shared/components/card/card.component.ts",
+        "hash": "12288237274984328005"
       },
       {
         "file": "src/app/shared/components/github-label/github-label.component.html",
@@ -262,11 +214,55 @@
       },
       {
         "file": "src/app/shared/components/github-label/github-label.component.ts",
-        "hash": "9991932771735391207"
+        "hash": "10585348137371900878"
       },
       {
-        "file": "src/app/shared/components/modal-close-button/modal-close-button-component.module.ts",
-        "hash": "7467589797227275590"
+        "file": "src/app/shared/components/loading/loading.component.html",
+        "hash": "12409903976374669256"
+      },
+      {
+        "file": "src/app/shared/components/loading/loading.component.scss",
+        "hash": "15882796663219523377"
+      },
+      {
+        "file": "src/app/shared/components/loading/loading.component.spec.ts",
+        "hash": "11905912649069930390"
+      },
+      {
+        "file": "src/app/shared/components/loading/loading.component.ts",
+        "hash": "6611373555413590093"
+      },
+      {
+        "file": "src/app/shared/components/login/login.component.html",
+        "hash": "8971064790067287663"
+      },
+      {
+        "file": "src/app/shared/components/login/login.component.scss",
+        "hash": "14041965176732576758"
+      },
+      {
+        "file": "src/app/shared/components/login/login.component.spec.ts",
+        "hash": "7113620088088091430"
+      },
+      {
+        "file": "src/app/shared/components/login/login.component.ts",
+        "hash": "846803523384861102"
+      },
+      {
+        "file": "src/app/shared/components/logout/logout.component.html",
+        "hash": "7069774338081187123"
+      },
+      {
+        "file": "src/app/shared/components/logout/logout.component.scss",
+        "hash": "13659292031851320092"
+      },
+      {
+        "file": "src/app/shared/components/logout/logout.component.spec.ts",
+        "hash": "16648898796842438640"
+      },
+      {
+        "file": "src/app/shared/components/logout/logout.component.ts",
+        "hash": "1414558472150516140"
       },
       {
         "file": "src/app/shared/components/modal-close-button/modal-close-button.component.html",
@@ -282,7 +278,39 @@
       },
       {
         "file": "src/app/shared/components/modal-close-button/modal-close-button.component.ts",
-        "hash": "1119759617305550416"
+        "hash": "8929048599788288010"
+      },
+      {
+        "file": "src/app/shared/components/photo/photo.component.html",
+        "hash": "6510269022962401317"
+      },
+      {
+        "file": "src/app/shared/components/photo/photo.component.scss",
+        "hash": "7731388080693687227"
+      },
+      {
+        "file": "src/app/shared/components/photo/photo.component.spec.ts",
+        "hash": "233563660258502312"
+      },
+      {
+        "file": "src/app/shared/components/photo/photo.component.ts",
+        "hash": "9183426881005176214"
+      },
+      {
+        "file": "src/app/shared/components/preview/preview.component.html",
+        "hash": "3512678652793692814"
+      },
+      {
+        "file": "src/app/shared/components/preview/preview.component.scss",
+        "hash": "11431479827714996289"
+      },
+      {
+        "file": "src/app/shared/components/preview/preview.component.spec.ts",
+        "hash": "18128510047502149234"
+      },
+      {
+        "file": "src/app/shared/components/preview/preview.component.ts",
+        "hash": "4514174162069325638"
       },
       {
         "file": "src/app/shared/components/report/report.component.html",
@@ -298,39 +326,7 @@
       },
       {
         "file": "src/app/shared/components/report/report.component.ts",
-        "hash": "12683454726991814288"
-      },
-      {
-        "file": "src/app/shared/components/settings/login/login.component.html",
-        "hash": "8971064790067287663"
-      },
-      {
-        "file": "src/app/shared/components/settings/login/login.component.scss",
-        "hash": "14041965176732576758"
-      },
-      {
-        "file": "src/app/shared/components/settings/login/login.component.spec.ts",
-        "hash": "7113620088088091430"
-      },
-      {
-        "file": "src/app/shared/components/settings/login/login.component.ts",
-        "hash": "3381929538069796242"
-      },
-      {
-        "file": "src/app/shared/components/settings/logout/logout.component.html",
-        "hash": "7069774338081187123"
-      },
-      {
-        "file": "src/app/shared/components/settings/logout/logout.component.scss",
-        "hash": "13659292031851320092"
-      },
-      {
-        "file": "src/app/shared/components/settings/logout/logout.component.spec.ts",
-        "hash": "16648898796842438640"
-      },
-      {
-        "file": "src/app/shared/components/settings/logout/logout.component.ts",
-        "hash": "16022739899528341712"
+        "hash": "10729873412476804983"
       },
       {
         "file": "src/app/shared/components/settings/setting-currency/setting-currency.component.html",
@@ -342,7 +338,7 @@
       },
       {
         "file": "src/app/shared/components/settings/setting-currency/setting-currency.component.ts",
-        "hash": "2395936223293915928"
+        "hash": "13253440573329644644"
       },
       {
         "file": "src/app/shared/components/settings/setting-processing-mode/setting-processing-mode.component.html",
@@ -354,7 +350,7 @@
       },
       {
         "file": "src/app/shared/components/settings/setting-processing-mode/setting-processing-mode.component.ts",
-        "hash": "15066820113842703806"
+        "hash": "6696029064286838875"
       },
       {
         "file": "src/app/shared/components/settings/setting-theme/setting-theme.component.html",
@@ -382,11 +378,11 @@
       },
       {
         "file": "src/app/shared/components/settings/settings.component.ts",
-        "hash": "3945660212717320318"
+        "hash": "4502233996172856757"
       },
       {
         "file": "src/app/shared/components/settings/settings.module.ts",
-        "hash": "9533888009726786846"
+        "hash": "8494563945348638659"
       },
       {
         "file": "src/app/shared/pipes/capitalize.pipe.spec.ts",
