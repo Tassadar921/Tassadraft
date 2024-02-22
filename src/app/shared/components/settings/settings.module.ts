@@ -9,7 +9,7 @@ import { SettingCurrencyComponent } from "./setting-currency/setting-currency.co
 import { LogoutComponent } from '../logout/logout.component';
 import { LoginComponent } from '../login/login.component';
 import { SettingProcessingModeComponent } from "./setting-processing-mode/setting-processing-mode.component";
-import { CapitalizePipe } from "../../pipes/capitalize.pipe";
+import { CapitalizePipe } from "../../pipes/capitalize/capitalize.pipe";
 
 
 @NgModule({
