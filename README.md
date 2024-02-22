@@ -1,4 +1,4 @@
-# Tassadraft v1.1
+# Tassadraft v1.2
 
 ### Frameworks: Angular 17.1.2, Ionic 7.7.0
 
