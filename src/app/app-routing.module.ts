@@ -10,7 +10,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'tassadraft',
     pathMatch: 'full'
+  },  {
+    path: 'tassacards',
+    loadChildren: () => import('./tassacards/tassacards.module').then( m => m.TassacardsPageModule)
   },
+  {
+    path: 'tassadecks',
+    loadChildren: () => import('./tassadecks/tassadecks.module').then( m => m.TassadecksPageModule)
+  },
+
 ];
 
 @NgModule({
