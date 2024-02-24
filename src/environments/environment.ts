@@ -4,8 +4,8 @@
 
 export const environment = {
   production: false,
-  // appApiBaseUrl: 'https://api.tassadraft.com',
-  appApiBaseUrl: 'http://localhost:3333',
+  appApiBaseUrl: 'https://api.tassadraft.com',
+  // appApiBaseUrl: 'http://localhost:3333',
   scryfallApiBaseUrl: 'https://api.scryfall.com',
   currenciesApiUrl: 'https://cdn.taux.live/api/ecb.json',
 };
