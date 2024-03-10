@@ -19,6 +19,7 @@ export class RequestService {
   private readonly authHeaders : {
     'Content-Type': string,
     'Access-Control-Allow-Origin': string,
+    'X-Requested-With': string,
     'Authorization': string
   };
 
@@ -31,6 +32,7 @@ export class RequestService {
     this.authHeaders = {
       'Content-Type': 'application/json',
       'Access-Control-Allow-Origin': environment.appApiBaseUrl,
+      'X-Requested-With': 'XMLHttpRequest',
       'Authorization': ''
     };
   }

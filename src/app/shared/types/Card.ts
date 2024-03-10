@@ -7,11 +7,11 @@ import BackSet from './back/BackSet';
 import ApiCard from './api/ApiCard';
 import BackCard from "./back/BackCard";
 
-function isApiCard(card: any): card is ApiCard {
+function isApiCard(card: ApiCard | BackCard): card is ApiCard {
   return (card as ApiCard).collector_number !== undefined;
 }
 
-function isBackCard(card: any): card is BackCard {
+function isBackCard(card: ApiCard | BackCard): card is BackCard {
   return (card as BackCard).collectorNumber !== undefined;
 }
 
