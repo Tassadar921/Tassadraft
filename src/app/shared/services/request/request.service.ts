@@ -133,11 +133,12 @@ export class RequestService {
   public async login(email: string, password: string): Promise<void> {
     this.loadingService.startLoading();
     try {
-      const data: { message: string | undefined, token: { token: string } | undefined } =
-        await lastValueFrom(this.http.post< { message: string | undefined, token: { token: string } | undefined } >(
-        `${environment.appApiBaseUrl}/api/login`, { email, password }));
+      const data: { message: string | undefined, token: string | undefined } =
+        await lastValueFrom(this.http.post< { message: string | undefined, token: string | undefined } >(
+        `${environment.appApiBaseUrl}/login`, { email, password }));
+      console.log('data', data);
       if (data.token) {
-        await this.localStorageService.setItem('sessionToken', data.token.token)
+        await this.localStorageService.setItem('sessionToken', data.token)
         await this.toastService.displayToast(`Connected`, 'top');
      } else {
         await this.localStorageService.setItem('sessionToken', '');
