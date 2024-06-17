@@ -60,8 +60,8 @@ export class CardComponent  implements OnInit {
 
   public async updateCardPrice(): Promise<void> {
     if (this.card) {
-      this.cardPrice = this.currencyService.convertToCurrency(this.card.displayedPrice, <'EUR' | 'USD' | 'GBP'>await this.localStorageService.getItem('currency'));
-      this.currencySymbol = this.currencyService.getSymbol(<'EUR' | 'USD' | 'GBP'>await this.localStorageService.getItem('currency'));
+      this.cardPrice = this.currencyService.convertToCurrency(this.card.displayedPrice, <'EUR' | 'USD'>await this.localStorageService.getItem('currency'));
+      this.currencySymbol = this.currencyService.getSymbol(<'EUR' | 'USD'>await this.localStorageService.getItem('currency'));
     }
   }
 

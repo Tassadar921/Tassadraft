@@ -170,29 +170,24 @@ export class RequestService {
   }
 
   public async remoteProcess(base64Strings: string[], cardsLength: number, previousPhotosLength: number): Promise<BackCard[]> {
-    let cardsArray: BackCard[] = [];
     if (base64Strings.length) {
       this.loadingService.startLoading();
       try {
-        const apiData = await lastValueFrom(this.http.post<{
-          data: BackCard[]
-        }>(`${environment.appApiBaseUrl}/api/reserved/process`,
+        const { cards: apiData} = await lastValueFrom(this.http.post<{ cards: BackCard[] }>(`${environment.appApiBaseUrl}/api/reserved/process`,
           { photos: base64Strings, cardsLength, previousPhotosLength },
           { headers: this.authHeaders }
         ));
-        if (apiData?.data) {
-          cardsArray = apiData.data;
-        }
+        this.loadingService.stopLoading();
+        return apiData;
       } catch (e: any) {
         // TODO: log error
         console.error(e);
         await this.toastService.displayToast(e.statusText, 'bottom', 'danger');
       }
-      await this.updateAuthHeaders();
       this.loadingService.stopLoading();
     }
-
-    return cardsArray;
+    await this.updateAuthHeaders();
+    return [];
   }
 
   public async prepareReport(projectName: string): Promise<Label[]> {
@@ -232,18 +227,5 @@ export class RequestService {
     }
     this.loadingService.stopLoading();
     return status;
-  }
-
-  // function for admin
-  public async addUser (): Promise<any> {
-    this.loadingService.startLoading();
-    try {
-
-    } catch (e: any) {
-      // TODO : log error
-      await this.toastService.displayToast(`Something went wrong`, 'bottom', 'danger');
-      console.log(e);
-    }
-    this.loadingService.stopLoading();
   }
 }

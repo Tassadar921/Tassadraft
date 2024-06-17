@@ -17,97 +17,80 @@ function isBackCard(card: ApiCard | BackCard): card is BackCard {
 
 export default class Card  {
   constructor(apiCard: ApiCard | BackCard, id: number) {
+    const currency: 'usd' | 'eur' = <'usd' | 'eur'>localStorage.getItem('currency') ?? 'usd';
     if (isBackCard(apiCard)) {
       //apiCard is BackCard instance
-      this.printedName = apiCard.printedName ?? null;
+      this.name = apiCard.name ?? '';
       this.imageUri = apiCard.imageUri;
       this.manaCost = apiCard.manaCost;
-      this.typeLine = apiCard.typeLine;
-      this.printedTypeLine = apiCard.printedTypeLine ?? null;
+      this.typeLine = apiCard.typeLine ?? '';
       this.colors = apiCard.colors;
-      this.oracleText = apiCard.oracleText;
-      this.printedText = apiCard.printedText ?? null;
+      this.text = apiCard.text ?? '';
       this.colorIdentity = apiCard.colorIdentity;
       this.legality = apiCard.legality;
       this.collectorNumber = apiCard.collectorNumber;
-      this.setName = apiCard.setName;
       this.price = apiCard.price;
       this.relatedUri = apiCard.relatedUri;
       this.purchaseUri = apiCard.purchaseUri;
-      this.language = apiCard.language;
       this.displayedPrice = apiCard.price.usd ?? 0;
       this.sets = apiCard.sets;
     } else if (isApiCard(apiCard)) {
       //apiCard is ApiCard instance
-      this.printedName = apiCard.printed_name ?? null;
+      this.name = apiCard.printed_name ?? apiCard.name;
       this.imageUri = new BackImageUri(apiCard.image_uris);
       this.manaCost = apiCard.mana_cost;
-      this.typeLine = apiCard.type_line;
-      this.printedTypeLine = apiCard.printed_type_line ?? null;
+      this.typeLine = apiCard.printed_type_line ?? apiCard.type_line;
       this.colors = apiCard.colors.join(',');
-      this.oracleText = apiCard.oracle_text;
-      this.printedText = apiCard.printed_text ?? null;
+      this.text = apiCard.printed_text ?? apiCard.oracle_text;
       this.colorIdentity = apiCard.color_identity.join(',');
       this.legality = new BackLegality(apiCard.legalities);
       this.collectorNumber = apiCard.collector_number;
-      this.setName = apiCard.set_name;
       this.price = new BackPrice(apiCard.prices);
       this.relatedUri = new BackRelatedUri(apiCard.related_uris, apiCard.scryfall_uri);
       this.purchaseUri = new BackPurchaseUri(apiCard.purchase_uris);
-      this.language = apiCard.lang;
-      this.displayedPrice = Number(apiCard.prices.usd) ?? 0;
+      this.displayedPrice = Number(apiCard.prices[currency]) ?? 0;
       this.sets = [];
     } else {
-      this.printedName = '';
+      this.name = '';
       this.imageUri = new BackImageUri();
       this.manaCost = '';
       this.typeLine = '';
-      this.printedTypeLine = null;
       this.colors = '';
-      this.oracleText = '';
-      this.printedText = null;
+      this.text = '';
       this.colorIdentity = '';
       this.legality = new BackLegality();
       this.collectorNumber = '';
-      this.setName = '';
       this.price = new BackPrice();
       this.relatedUri = new BackRelatedUri();
       this.purchaseUri = new BackPurchaseUri();
-      this.language = '';
       this.displayedPrice = 0;
       this.sets = [];
     }
-    this.name = apiCard.name;
+    this.id = id;
     this.layout = apiCard.layout;
     this.cmc = apiCard.cmc;
     this.rarity = apiCard.rarity;
     this.artist = apiCard.artist;
-    this.id = id;
   }
 
   public id: number;
   public readonly name: string;
-  public readonly printedName: string | null;
   public readonly layout: string;
   public readonly imageUri: BackImageUri;
   public readonly manaCost: string;
   public readonly cmc: number;
   public readonly typeLine: string;
-  public readonly printedTypeLine: string | null;
-  public readonly oracleText: string;
-  public readonly printedText: string | null;
+  public readonly text: string;
   public readonly colors: string;
   public readonly colorIdentity: string;
   public readonly legality: BackLegality;
   public readonly sets: BackSet[];
   public readonly collectorNumber: string;
-  public readonly setName: string;
   public readonly rarity: string;
   public readonly artist: string;
   public readonly price: BackPrice;
   public readonly relatedUri: BackRelatedUri;
   public readonly purchaseUri: BackPurchaseUri;
-  public readonly language: string;
   public displayedPrice: number;
 
   public getFoiledEdited(): boolean {

@@ -75,23 +75,17 @@ export class TassadraftPage implements OnInit {
     if (await this.localStorageService.getItem('processingMode') === ProcessingModeEnum.local) {
       this.loadingService.startLoading(true);
       this.cards.setCards(await this.getCardsNameService.process(this.photos, this.cards));
-      this.updatedCardDisplayedPrice();
-      this.photos.processed();
-      this.processed = true;
     } else if (await this.localStorageService.getItem('processingMode') === ProcessingModeEnum.remote) {
       const backCards: BackCard[] = await this.requestService.remoteProcess(
         await this.getBase64Strings(), this.cards.getCards().length, this.photos.getProcessedPhotos().length
       );
+      this.cards.clearCards();
       backCards.map((backCard: BackCard): void => {
-        const card: Card = this.cards.add(backCard);
-        backCard.images.map((image: number): void => {
-          this.photos.getPhotos()[image].pushCard(card);
-        });
+        this.cards.add(backCard);
       });
-      this.updatedCardDisplayedPrice();
-      this.photos.processed();
-      this.processed = true;
     }
+    this.updatedCardDisplayedPrice();
+    this.processed = true;
   }
 
   public async getBase64Strings(): Promise<string[]> {

@@ -37,7 +37,6 @@ export class AppComponent implements OnInit {
         {
           EUR: currencies.EUR,
           USD: currencies.USD,
-          GBP: currencies.GBP,
         });
     } catch (e) {
       console.error(e);
