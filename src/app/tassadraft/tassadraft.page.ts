@@ -62,12 +62,6 @@ export class TassadraftPage implements OnInit {
   }
 
   public deletePhoto(index: number): void {
-    this.photos.getPhotos()[index].getCards().forEach((card: Card): void => {
-      if (!this.photos.isCardPresentMultipleTimes(card.name)) {
-        this.cards.deleteByName(card.name);
-        this.undoService.remove(card);
-      }
-    });
     this.photos.delete(index);
   }
 
@@ -93,7 +87,6 @@ export class TassadraftPage implements OnInit {
 
     // Map over photos to create a promise for each photo processing
     const promises: (Promise<string|undefined>[]) = photos.map(async (photo: Photo): Promise<string | undefined> => {
-      if (!photo.getProcessed()) {
         const response: Response = await fetch(photo.getPath());
         const blob: Blob = await response.blob();
 
@@ -105,9 +98,6 @@ export class TassadraftPage implements OnInit {
           };
           reader.readAsDataURL(blob);
         });
-      } else {
-        return undefined;
-      }
     });
     return (await Promise.all(promises)).filter((string): string is string => string !== undefined);
   }
@@ -160,9 +150,6 @@ export class TassadraftPage implements OnInit {
 
   public clearCards(): void {
     this.cards.clearCards();
-    this.photos.map((photo: Photo): void => {
-      photo.clearCards();
-    });
     this.processed = false;
   }
 

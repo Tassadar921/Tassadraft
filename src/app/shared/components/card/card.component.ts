@@ -24,7 +24,7 @@ export class CardComponent  implements OnInit {
   @Output() public deleteCardEvent: EventEmitter<number> = new EventEmitter<number>();
   @Output() public updatedPriceEvent: EventEmitter<void> = new EventEmitter<void>();
   public foilCard: boolean = false;
-  public currencySymbol: '€' | '$' | '£' = '$';
+  public currencySymbol: '€' | '$' = '$';
   public cardPrice: number = 0;
   private buttonClicked: boolean = false;
 
@@ -39,7 +39,7 @@ export class CardComponent  implements OnInit {
     await this.updateCardPrice();
     this.currencyService.event.subscribe((): void => {
       this.updateCardPrice();
-    })
+    });
   }
 
   public deleteCard(id: number | undefined): void {
@@ -59,9 +59,15 @@ export class CardComponent  implements OnInit {
   }
 
   public async updateCardPrice(): Promise<void> {
+    const currency: 'EUR' | 'USD' = <'EUR' | 'USD'>await this.localStorageService.getItem('currency') ?? 'USD';
     if (this.card) {
-      this.cardPrice = this.currencyService.convertToCurrency(this.card.displayedPrice, <'EUR' | 'USD'>await this.localStorageService.getItem('currency'));
-      this.currencySymbol = this.currencyService.getSymbol(<'EUR' | 'USD'>await this.localStorageService.getItem('currency'));
+      if (currency === 'EUR') {
+        this.card.displayedPrice = this.foilCard ? this.card.price.eurFoil : this.card.price.eur;
+      } else if (currency === 'USD') {
+        this.card.displayedPrice = this.foilCard ? this.card.price.usdFoil : this.card.price.usd;
+      }
+      this.cardPrice = this.card.displayedPrice;
+      this.currencySymbol = this.currencyService.getSymbol(currency);
     }
   }
 
