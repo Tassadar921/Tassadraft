@@ -23,11 +23,8 @@ www
 platforms
 plugins
 android
-
-# Node
-front/node_modules
-front/npm-debug.log
-front/yarn-error.log
+npm-debug.log
+src/environments
 
 # IDEs and editors
 .idea/
